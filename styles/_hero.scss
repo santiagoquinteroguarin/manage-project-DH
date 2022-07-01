@@ -1,0 +1,70 @@
+.wrap-hero {
+  @include flex(row, wrap, center, null, null);
+  padding: 1.5rem 0;
+}
+
+.hero {
+  width: 90%;
+  @include flex(column-reverse, null, null, null, null);
+
+  &-description {
+    @include flex(column, wrap, center, center, 1rem);
+    padding: 0;
+
+    h1 {
+      font-weight: 700;
+      font-size: 3rem;
+      line-height: 1.2;
+      color: $second-blue-dark;
+      text-align: center;
+    }
+
+    p {
+      text-align: justify;
+      line-height: 1.5;
+      width: 85%;
+      color: $grey-color;
+    }
+
+    .btn-get-started {
+      display: flex;
+      margin-top: 2rem;
+      box-shadow: $btn-box-shadow-orange;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .wrap-hero {
+    padding: 3rem 0;
+  }
+
+  .hero {
+    width: 80%;
+    flex-direction: row;
+
+    &-description {
+      width: 60%;
+      gap: 2rem;
+      align-items: flex-start;
+
+      h1 {
+        width: 80%;
+        font-size: 5rem;
+        text-align: left;
+      }
+
+      p {
+        width: 60%;
+        text-align: left;
+        line-height: 1.5;
+        color: $black-color;
+      }
+
+      .btn-get-started {
+        display: flex;
+        margin: 0;
+      }
+    }
+  }
+}

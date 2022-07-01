@@ -1,0 +1,122 @@
+.wrap-main {
+  @include flex(row, wrap, center, null, null);
+  padding: 3rem 0;
+}
+
+.main {
+  width: 100%;
+  @include flex(column, null, null, null, null);
+
+  &-about {
+    margin-bottom: 5rem;
+
+    h2 {
+      line-height: 1.2;
+      font-weight: 700;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    p {
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.6;
+      color: $grey-color;
+    }
+  }
+
+  &-features {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-left: 1.5rem;
+
+    &-item {
+      div {
+        display: block;
+        background-color: #FFEEEC;
+        height: 4rem;
+        border-top-left-radius: 3rem;
+        border-bottom-left-radius: 3rem;
+
+        h3 {
+          font-weight: 700;
+          font-size: 1.4rem;
+          color: #323851;
+
+          &::before {
+            counter-increment: geek-counter;
+            content: counter(geek-counter);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 6rem;
+            height: 4rem;
+            padding: 10px, 25px, 10px, 25px;
+            border-radius: 3rem;
+            background-color: $orange-color;
+            color: $white-color;
+            margin-right: 1rem;
+          }
+        }
+      }
+
+      p {
+        color: $grey-color;
+        margin-right: 2rem;
+        text-align: left;
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .main {
+    width: 80%;
+    flex-direction: row;
+      
+
+    &-about {
+      width: 50%;
+
+      h2 {
+        width: 70%;
+        line-height: 1.2;
+        font-weight: 700;
+        font-size: 3.6rem;
+        margin-bottom: 3.2rem;
+        text-align: start;
+      }
+
+      p {
+        margin: 0;
+        text-align: start;
+        width: 60%;
+        color: $black-color;
+      }
+    }
+  
+    &-features {
+      width: 50%;
+
+      &-item {
+        div {
+          background-color: $white-color;
+
+          h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+          }
+        }
+
+        p {
+          text-align: justify;
+          padding-left: 7rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,165 @@
+.wrap-header {
+    @include flex(row, wrap, center, null, null);
+    height: 12rem;
+}
+
+.header {
+    @include flex(row, wrap, space-between, center, null);
+}
+
+.wrap-logo img {
+    width: 10rem;
+    display: flex;
+}
+
+.nav-links {
+    height: 100%;
+    @include flex(row, wrap, flex-end, center, 3rem);
+
+    li {
+        a {
+            color: $white-color;
+            font-size: 1.6rem;
+            line-height: 2;
+            display: flex;
+    
+            &:hover {
+                color: $grey-color;
+            }
+        }
+
+        .btn-get-started:hover {
+            color: $white-color;
+        }
+    }
+}
+
+.btn-get-started {
+    display: none;
+    margin: 0;
+    width: 14rem;
+    height: 4.5rem;
+    padding: 1rem;
+    border-radius: 5rem;
+    background-color: $orange-color;
+    color: $white-color;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $btn-box-shadow;
+
+    &:hover {
+        opacity: .7;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrap-header {
+        height: 5.5rem;
+    }
+
+    .header {
+        width: 100%;
+    }
+
+    .wrap-logo {
+        margin-left: 2rem;
+    }
+
+    .wrap-logo img {
+        width: 17rem;
+    }
+
+    .nav-links,
+    #hamburger {
+        display: none;
+    }
+
+    .nav-links {
+        width: 50%;
+    }
+
+    .navigation {
+        width: 0;
+        position: relative;
+        @include flex(row, wrap, flex-end, center, null);
+    }
+
+    .icon {
+        position: absolute;
+        right: 1.9rem;
+        top: 50%;
+        z-index: 2;
+        display: flex;
+        transform: translate(-5%, -50%);
+        cursor: pointer;
+    }
+
+    #hamburger:checked + .icon {
+        svg path{
+            fill:$blue-dark;
+            animation: change 1s 1 forwards;
+        }
+    }
+
+    #hamburger:not(:checked) + .icon {
+        svg path{
+            fill:$blue-dark;
+            animation: change 1s 0 forwards;
+        }
+    }
+
+    #hamburger:checked + .icon + .nav-links {
+        position: absolute;
+        top: 2.4rem;
+        height: 45rem;
+        width: 100vw;
+        background: $blue-dark;
+        @include flex(column, wrap, center, center, null);
+
+        li {
+            gap: 10px;
+
+            a:hover {
+                    color: $grey-color;
+            }
+
+            .btn-get-started:hover {
+                color: $white-color;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .icon,
+    #hamburger {
+        display: none;
+    }
+
+    .header {
+      width: 80%;
+      height: 100%;
+    }
+
+    .wrap-logo img {
+      width: 17rem;
+    }
+
+    .btn-get-started {
+        display: flex;
+    }
+
+    .nav-links li:last-child {
+        display: none;
+    }
+
+    .nav-links li a {
+        color: $blue-dark;
+    }
+}
+
+@keyframes change {
+  100% {
+      d: path("M13.46,12L19,17.54V19H17.54L12,13.46L6.46,19H5V17.54L10.54,12L5,6.46V5H6.46L12,10.54L17.54,5H19V6.46L13.46,12Z");
+  }
+}

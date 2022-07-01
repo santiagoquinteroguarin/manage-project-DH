@@ -1,0 +1,31 @@
+html {
+	box-sizing: border-box;
+	font-size: 62.5%;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 2;
+    font-family: $font-f;
+    counter-reset: geek-counter;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}

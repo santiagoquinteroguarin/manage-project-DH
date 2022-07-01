@@ -1,0 +1,46 @@
+.wrap-slogan {
+  @include flex(row, null, center, center, null);
+  padding: 3rem 0;
+  background-color: $orange-color;
+  padding: 6.4rem 0;
+}
+
+.slogan {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  h2 {
+    text-align: center;
+    width: 100%;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: $white-color;
+  }
+
+  .btn-get-started {
+    display: flex;
+    background-color: $white-color;
+    color: $orange-color;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .slogan {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      width: 50%;
+      text-align: left;
+    }
+  }
+}
